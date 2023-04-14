@@ -1,0 +1,16 @@
+Die 'checkID'-Funktion ist ein Teil eines größeren Programms, das zur Verwaltung von Stationen entwickelt wurde, die reserviert oder belegt werden können. Die Funktion nimmt drei Argumente entgegen: index, ID und action. Der index gibt die Station an, die überprüft werden soll (mit Werten von 1 bis 4). Die ID repräsentiert die eindeutige Kennung des Benutzers oder der Person, die die Station reservieren oder belegen möchte. Das action-Argument gibt an, welche Aktion der Benutzer ausführen möchte, entweder "reservieren" (reservieren) oder "belegen" (belegen).
+
+Die Funktion überprüft die Station basierend auf dem index und der gewünschten Aktion des Benutzers. Sie stellt sicher, dass eine Station, die bereits reserviert oder belegt ist, nicht von einer anderen Person mit einer unterschiedlichen ID verwendet wird. Wenn eine Station frei ist, wird sie entweder reserviert oder belegt, abhängig von der gewünschten Aktion.
+
+Folgendes ist der Ablauf der Funktion:
+
+Wenn der index 0 ist, wird eine Meldung ausgegeben, dass alle Stationen belegt sind und die Funktion wird beendet.
+Die Funktion greift auf die entsprechenden Fenster-, Timer- und Button-Objekte für die angegebene Station zu.
+Wenn die gewünschte Aktion "reservieren" ist:
+a. Die Funktion prüft, ob die Station frei ist. Wenn ja, wird die Station auf "Reserviert" gesetzt, der Timer gestartet und das Aussehen des Buttons angepasst.
+b. Wenn die Station nicht frei ist, wird eine Meldung angezeigt, dass sie bereits reserviert oder belegt ist.
+Wenn die gewünschte Aktion "belegen" ist:
+a. Wenn die Station frei ist, wird sie vom Benutzer belegt und das Fenster angezeigt.
+b. Wenn die Station reserviert ist, wird überprüft, ob die IDs übereinstimmen. Wenn ja, wird der Timer gestoppt und das Fenster angezeigt. Andernfalls wird eine Meldung angezeigt, dass die Station bereits von einer anderen Person reserviert ist.
+c. Wenn die Station belegt ist, wird überprüft, ob die IDs übereinstimmen. Wenn ja, wird das Fenster angezeigt. Andernfalls wird eine Meldung angezeigt, dass die Station bereits von einer anderen Person belegt ist.
+Die Funktion stellt sicher, dass Stationen korrekt reserviert oder belegt werden und verhindert, dass mehrere Benutzer dieselbe Station zur gleichen Zeit nutzen.

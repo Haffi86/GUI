@@ -1,0 +1,19 @@
+Der Code definiert zwei Funktionen: handle_window und keyPressEvent. Die Funktion handle_window überprüft, ob die IDs für das aktuell sichtbare Fenster übereinstimmen und führt entsprechende Aktionen aus. Die Funktion keyPressEvent ist für die Verarbeitung von Tastatureingaben zuständig.
+
+handle_window:
+
+Diese Funktion nimmt ein window-Objekt als Argument und überprüft, ob self.id_string (die eingegebene ID) der ID des Fensters entspricht und ob die self.action in der Liste der erlaubten Aktionen ["stop", "resume", "checkout"] enthalten ist.
+Wenn die Bedingungen erfüllt sind, wird der entsprechende Dialog angezeigt, indem die getattr Funktion verwendet wird, um das Dialogattribut dynamisch aufzurufen (z.B. window.stopDialog.show()).
+Andernfalls wird der Dialog self.login.wrongIDDialog angezeigt, das Login-Fenster wird sichtbar gemacht und das aktuelle Fenster wird ausgeblendet.
+keyPressEvent:
+
+Diese Funktion wird aufgerufen, wenn eine Taste auf der Tastatur gedrückt wird.
+Wenn die Shift-Taste gedrückt wird (QtCore.Qt.Key_Shift), ignoriert die Funktion die Eingabe.
+Wenn die Tab-Taste gedrückt wird (QtCore.Qt.Key_Tab), bedeutet dies, dass die Eingabe abgeschlossen ist. Der Code führt dann die folgenden Schritte aus:
+Die ID-Liste wird in einen String umgewandelt.
+Das sichtbare Fenster wird ermittelt, indem in der Liste der Fenster nach dem ersten sichtbaren Fenster gesucht wird.
+Wenn ein sichtbares Fenster gefunden wurde, wird handle_window aufgerufen, um die ID-Übereinstimmung und die Aktionen auszuführen.
+Wenn das Login-Fenster sichtbar ist, wird die entsprechende Aktion ausgeführt (Reservieren, Take-Reserved oder Belegen).
+Die ID-Liste wird geleert und das Eingabefeld wird ausgeblendet.
+Wenn die Taste 'Q' gedrückt wird, wird das Programm beendet.
+Bei jedem anderen Tastendruck wird die Eingabe als Zeichen gelesen und der ID-Liste hinzugefügt. Wenn dies nicht möglich ist, wird eine Fehlermeldung ausgegeben.

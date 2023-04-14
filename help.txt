@@ -1,0 +1,28 @@
+wenn virtualenv auf wsl die Füße hoch reißt..:
+https://exerror.com/attributeerror-module-virtualenv-create-via_global_ref-builtin-cpython-mac_os-has-no-attribute-cpython2macosarmframework/#:~:text=create.-,via_global_ref.,Your%20error%20must%20be%20solved.
+
+
+YT Tutorial Vid:
+https://www.youtube.com/watch?v=N5vscPTWKOk&t=142s&ab_channel=CoreySchafer
+
+Before using qt do:
+	- sudo apt-get update && sudo apt-get upgrade
+	- sudo apt-get install qt5-default
+	- python3 -m venv /path/to/new/virtual/environment
+
+Freezing current deps of virtualenv on current location in req file:
+	- env1/bin/python -m pip freeze > requirements.txt
+
+Install saved deps to virtualenv from req file:
+	- env2/bin/python -m pip install -r requirements.txt
+
+Start virtual env:
+	- source env1/bin/activate
+	- to deactive do: "deactivate"
+
+Python Interpreter aus venv manuell zu VS Code hinzufügen:
+	- "F1" > Python: Select Interpreter > "path to python interpreter in venv"
+
+Wenn Matplotlib das GUI Framework fehlt:
+	- global installieren: "sudo apt-get install python3-tk"
+	- minimalinvasive Variante in venv: "pip install pyqt5"

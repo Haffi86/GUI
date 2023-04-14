@@ -1,0 +1,6 @@
+/__pycache__
+*pyc
+/ui/__pycache__
+/venv/
+/ui/*.py
+.venv
